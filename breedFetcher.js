@@ -2,10 +2,9 @@ const request = require('request');
 
 //get the name of the cat
 const catName = process.argv.slice(2).toString();
-//console.log('catName :', catName);
-
-
-request(`https://api.thecatapi.com/v1/breeds/search?q=${catName}`, (err,resp, body) => {
+//could be done also: catName = process.argv[2] - there's only one arg passed in terminal
+  
+request(`https://api.thecatapi.com/v1/breeds/search?q=${catName}`, (err,resp,body) => {
   
   if (err) {
     //if there is something misspelled
